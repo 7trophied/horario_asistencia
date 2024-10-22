@@ -11,7 +11,7 @@ import sqlite3
 # Registro de clase integrara los reportes de cada jefe de grupo en la parte inferior.
 # Registro de maestro permitira logearse como maestro o superior y agregar horarios con todos los semestres.
 # Visualizar clases sera una forma sencilla de ver el horario, separando por semestre, dia y hora.
-# Acerca sera una opcion donde se haran automaticamente los reportes de cada semestre de manera semanal, donde se verificara el haber cumplido con las clases correspondientes en tiempo y forma.
+# Reportes y estadisticas sera una opcion donde se haran automaticamente los reportes de cada semestre de manera semanal, donde se verificara el haber cumplido con las clases correspondientes en tiempo y forma.
 
 #   ├── main.py
 #   ├── pages()
@@ -32,7 +32,7 @@ def main():
 
     with st.sidebar:
         selected = option_menu(
-            "Menú Principal", 
+            "Menu", 
             ["Inicio", "Registro de Clase", "Registro de Maestro", "Visualizar Clases", "Reportes y Estadísticas"], 
             icons=['house', 'book', 'person-add', 'clipboard', 'bar-chart-line'],
             menu_icon="menu-up", 
@@ -54,9 +54,6 @@ def main():
             }
         )
 
-   # if not mostrar_login():
-       # st.warning("Por favor, inicia sesión para continuar.")
-        # return
 
     if selected == "Inicio":
         inicio.mostrar_inicio()
@@ -69,7 +66,7 @@ def main():
     elif selected == "Reportes y Estadísticas":
         reportes_estadisticas.mostrar_reportes(conn)
     else:
-        st.error("Opción no válida")
+        st.error("error")
 
 if __name__ == "__main__":
     main()
